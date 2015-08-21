@@ -6,7 +6,9 @@ function repoCtrl($scope, $http) {
 				selected.push(repo);
 			}
 		});
+        selected.sort(function(r1, r2){
+            return r1.stargazers_count < r2.stargazers_count;
+        });
 		$scope.repos = selected;
 	});
-	return;
 }

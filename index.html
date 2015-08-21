@@ -13,39 +13,52 @@
     <link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
-    <div role="main" id="main" class="container">
-        <div class="row">
+    <div class="container-fluid centered">
+        <div class="row-fluid">
             <div class="span12">
                 <h1 class="brand">
                     <a href="/">
                         <img src="img/monogram.svg" alt="CT Monogram icon" height="79" width="48">
                     </a>
-                    Chris Tabor's Github.
+                    Chris Tabor's Github <small>(Open Source Software).</small>
                 </h1>
                 <hr>
             </div>
-            <nav class="span2">
-                <h4>Navigation</h4>
+        </div>
+    </div>
+    <section id="repo-list" ng-controller="repoCtrl">
+        <div class="container-fluid repo" ng-repeat="(k, repo) in repos">
+            <div class="row-fluid">
+                <div class="span7">
+                    <h4>{{ repo.name }} <em class="excl">!</em></h4>
+                    <p>{{ repo.description }}</p>
+                </div>
+                <div class="span3">
+                    <ul class="stats">
+                        <li><span>Stars: </span> {{ repo.stargazers_count }}</li>
+                        <li><span>Watchers:</span> {{ repo.watchers_count }}</li>
+                        <li><span>Forks:</span> {{ repo.forks }}</li>
+                        <li><span>Language:</span> {{ repo.language }}</li>
+                    </ul>
+                </div>
+                <div class="span2">
+                    <div class="buttons">
+                        <a href="{{ repo.html_url }}" class="btn btn-default btn-large" target="_blank" title="{{ repo.name }}">Code</a>
+                        <a href="{{ repo.homepage }}" class="btn btn-default btn-large" target="_blank" title="{{ repo.name }}">Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container-fluid centered">
+        <div class="row-fluid">
+            <nav class="span12">
                 <ul>
                     <li><a href="/">Home</a></li>
-                </ul>
-                <h4>Other spots on the web</h4>
-                <ul>
                     <li><a href="http://www.dxdstudio.com" target="_blank">Personal Website</a></li>
                     <li><a href="http://www.linkedin.com/profile/view?id=12862384" target="_blank">LinkedIn</a></li>
                 </ul>
             </nav>
-            <section id="repo-list" ng-controller="repoCtrl" class="span10">
-                <h4>Some of my Open Source projects: </h4>
-                <div class="span3" ng-repeat="repo in repos">
-                    <h4>{{ repo.name }}</h4>
-                    <p>{{ repo.description }}</p>
-                    <div class="buttons">
-                        <a href="{{ repo.html_url }}" class="btn btn-small" target="_blank" title="{{ repo.name }}">Code</a>
-                        <a href="{{ repo.homepage }}" class="btn btn-small" target="_blank" title="{{ repo.name }}">Demo</a>
-                    </div>
-                </div>
-            </section>
         </div>
     </div>
 
