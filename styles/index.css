@@ -63,6 +63,10 @@ blockquote {
     opacity: 1;
     padding-top: 10px;
 }
+.repo .btn[href="#"] {
+    pointer-events: none;
+    opacity: 0.4;
+}
 .repo .stats {
     margin: -20px 0 0 0;
     padding: 0;
