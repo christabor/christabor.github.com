@@ -9,6 +9,7 @@ body {
 	font-size: 16px;
 	border-top: 12px solid #444;
 	font-family: 'Actor', sans-serif;
+    padding: 0;
 }
 .brand a,
 .brand a:hover {
@@ -33,7 +34,6 @@ blockquote {
     padding-right: 20px;
 }
 .repo {
-    height: 200px;
     border-bottom:1px solid #f1f1f1;
     padding-top: 3em;
     padding-bottom: 3em;
@@ -99,6 +99,9 @@ blockquote {
     background-color: #444;
     color: white;
 }
+.container-fluid {
+    padding: 2em;
+}
 nav ul, nav li {
     display: inline-block;
 }
@@ -126,9 +129,6 @@ a {
     body {
         margin: 0;
         padding: 0;
-    }
-    .container-fluid {
-        padding: 1em;
     }
     .repo p, .repo:hover p {
         font-size: 16px;
