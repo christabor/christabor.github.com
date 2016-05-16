@@ -85,7 +85,6 @@ blockquote {
 }
 .repo:hover h4 {
     padding-left: 10px;
-    font-size: 50px;
 }
 .repo .stats,
 .repo .excl {
